@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+var logger = require('morgan');
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
@@ -12,7 +13,7 @@ const alertRoute = require("./routes/alert");
 const cors = require("cors");
 const { response } = require("express");
 dotenv.config();
-
+app.use(logger('dev'));
 mongoose
   .connect("mongodb+srv://FYP:fyp@cluster0.38nw6.mongodb.net/?retryWrites=true&w=majority")
   .then(() => console.log("DB Connection Successfull!"))

@@ -18,6 +18,7 @@
     "localtunnel": "^2.0.2",
     "mongoose": "^6.2.1",
     "mongoose-ip-address": "^0.0.6",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.15"
   }
 }
