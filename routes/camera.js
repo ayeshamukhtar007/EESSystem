@@ -51,6 +51,19 @@ router.put("/updateCamera/:cid/:uid", verifyTokenAndAuthorization, async (req, r
         } catch (err) {
           res.status(500).json(err);
         }
+});  
+router.put("/updateCamera/:uid", verifyTokenAndAuthorization, async (req, res) => {
+  console.log(req.body.status)  
+try {
+      const updatedCamera = await Camera.Update(
+        {
+          mode:req.body.mode,
+        }
+      );
+      res.status(200).json(updatedCamera);
+    } catch (err) {
+      res.status(500).json(err);
+    }
 });   
 router.get('/ViewAllCameras/:uid',verifyTokenAndAuthorization,async (req, res) => {
  Camera.find({ user: req.params.uid }).select('name').select('mode').select('status').select('videoLink').exec(function(error, results) {
