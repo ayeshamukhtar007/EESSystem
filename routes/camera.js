@@ -38,20 +38,20 @@ router.post("/addcamera/:uid",verifyTokenAndAuthorization, async (req, res) => {
  
   });
 //UPDATE
-router.put("/updateCamera/:cid/:uid", verifyTokenAndAuthorization, async (req, res) => {
-      console.log(req.body.status)  
-  try {
-          const updatedCamera = await Camera.findOneAndUpdate({ _id:req.params.cid}
-            ,{name:req.body.name,
-              status:req.body.status,
-              mode:req.body.mode,
-            }
-          );
-          res.status(200).json(updatedCamera);
-        } catch (err) {
-          res.status(500).json(err);
-        }
-});  
+// router.put("/updateCamera/:cid/:uid", verifyTokenAndAuthorization, async (req, res) => {
+//       console.log(req.body.status)  
+//   try {
+//           const updatedCamera = await Camera.findOneAndUpdate({ _id:req.params.cid}
+//             ,{name:req.body.name,
+//               status:req.body.status,
+//               mode:req.body.mode,
+//             }
+//           );
+//           res.status(200).json(updatedCamera);
+//         } catch (err) {
+//           res.status(500).json(err);
+//         }
+// });  
 router.put("/updateCamera/:uid", async (req, res) => {
   console.log(req.body.status)  
 try {
