@@ -68,6 +68,10 @@ try {
       res.status(500).json(err);
     }
 });   
+router.get("/", (req,res)=>{
+  let response="hello";
+  res.status(200).json(response);
+});
 router.get('/ViewAllCameras/:uid',verifyTokenAndAuthorization,async (req, res) => {
  Camera.find({ user: req.params.uid }).select('name').select('mode').select('status').select('videoLink').exec(function(error, results) {
       if (error) {
