@@ -52,7 +52,7 @@ router.put("/updateCamera/:cid/:uid", verifyTokenAndAuthorization, async (req, r
           res.status(500).json(err);
         }
 });  
-router.put("/updateCamera/:uid", verifyTokenAndAuthorization, async (req, res) => {
+router.put("/updateCamera/:uid", async (req, res) => {
   console.log(req.body.status)  
 try {
       const updatedCamera = await Camera.Update(
