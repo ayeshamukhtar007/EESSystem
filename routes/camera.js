@@ -55,7 +55,7 @@ router.post("/addcamera/:uid",verifyTokenAndAuthorization, async (req, res) => {
 router.put("/updateCamera/:uid", async (req, res) => {
 console.log("here")
 try {
-      const updatedCamera = await Camera.findAndUpdate(
+      const updatedCamera = await Camera.findOneAndUpdate(
         {
           user:req.params.uid
         },

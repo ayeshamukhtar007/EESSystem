@@ -33,7 +33,7 @@ app.use("/api/admin", adminRoute);
 app.use("/api/user", userRoute);
 app.use("/api/alert", alertRoute);
 app.use("/api/service", serviceRoute);
-// app.listen(process.env.PORT || 5000, () => {
-//     console.log("Backend server is running!");
-//   });
+app.listen(process.env.PORT || 5000, () => {
+    console.log("Backend server is running!");
+  });
 module.exports = app;
